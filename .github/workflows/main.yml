@@ -25,12 +25,8 @@ jobs:
           distribution: 'zulu'
           cache: maven
 
-      - name: Dar permissão ao Maven Wrapper
-        working-directory: agroPec
-        run: chmod +x mvnw
-
       - name: Testar e analisar com SonarQube
         working-directory: agroPec
-        run: ./mvnw -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar
+        run: mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}

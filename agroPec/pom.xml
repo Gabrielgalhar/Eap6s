@@ -27,8 +27,7 @@
 		<url/>
 	</scm>
 	<properties>
-    	<sonar.organization>gabrielgalhar</sonar.organization>
-    	<sonar.projectKey>Gabrielgalhar_Eap6s</sonar.projectKey>
+    	< sonar.organization > gabrielgalhar < /sonar.organization > 
     	<java.version>21</java.version>
 	</properties>
 	

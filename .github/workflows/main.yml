@@ -11,7 +11,7 @@ jobs:
   build:
     name: Build and analyze
     runs-on: ubuntu-latest
-
+ 
     steps:
       - name: Baixar o código
         uses: actions/checkout@v4

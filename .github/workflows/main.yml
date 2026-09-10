@@ -24,10 +24,10 @@ jobs:
           cache: maven
 
       - name: Dar permissão ao Maven Wrapper
-        run: chmod +x agroPec/mvnw
+        run: chmod +x AEP6S-1-Entrega-main/agroPec/mvnw
 
       - name: Testar e analisar com SonarQube
-        working-directory: agroPec
+        working-directory: AEP6S-1-Entrega-main/agroPec
         run: ./mvnw -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}

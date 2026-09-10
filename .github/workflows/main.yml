@@ -15,6 +15,8 @@ jobs:
     steps:
       - name: Baixar o código
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: Configurar Java
         uses: actions/setup-java@v4
@@ -24,10 +26,11 @@ jobs:
           cache: maven
 
       - name: Dar permissão ao Maven Wrapper
-        run: chmod +x AEP6S-1-Entrega-main/agroPec/mvnw
+        working-directory: agroPec
+        run: chmod +x mvnw
 
       - name: Testar e analisar com SonarQube
-        working-directory: AEP6S-1-Entrega-main/agroPec
+        working-directory: agroPec
         run: ./mvnw -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
